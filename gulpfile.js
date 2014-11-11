@@ -102,8 +102,7 @@ var autoprefixBrowsers = {
 			server: {
 				baseDir: './dist',
 				index: files.index
-			},
-			browser: "chrome"
+			}
 		});
 	});
 
@@ -113,8 +112,7 @@ var autoprefixBrowsers = {
 			server: {
 				baseDir: basePath,
 				index: files.index
-			},
-			browser: "chrome"
+			}
 		});
 	});
 
