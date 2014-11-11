@@ -12,7 +12,7 @@ npm install -g bower
 ### Create App
 
 ```
-git clone https://github.com/Hurtak/SatoshiLabsHomework.git app
+git clone https://github.com/Hurtak/SatoshiLabsHomework.git
 cd SatoshiLabsHomework
 npm install
 bower install
