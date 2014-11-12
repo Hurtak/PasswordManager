@@ -1,6 +1,10 @@
 SatoshiLabsHomework
 ===================
 
+### Demo
+
+http://hurtak.github.io/SatoshiLabsHomework/
+
 ### Prerequisites
 
 [Node.js](http://nodejs.org) is required.
