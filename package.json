@@ -1,7 +1,6 @@
 {
-  "name": "js-devstack",
-  "version": "0.0.0",
-  "description": "Simple frontend devstack",
+  "name": "SatoshiLabsHomework",
+  "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.8.9",
@@ -27,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hurtak/js-devstack.git"
+    "url": "https://github.com/Hurtak/SatoshiLabsHomework.git"
   },
   "author": "Petr Hurtak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Hurtak/js-devstack/issues"
+    "url": "https://github.com/Hurtak/SatoshiLabsHomework/issues"
   },
-  "homepage": "https://github.com/Hurtak/js-devstack"
+  "homepage": "https://github.com/Hurtak/SatoshiLabsHomework"
 }
