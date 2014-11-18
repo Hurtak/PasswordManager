@@ -1,6 +1,8 @@
 SatoshiLabsHomework
 ===================
 
+Password manager application built with <b>AngularJS</b>
+
 ### Demo
 
 http://hurtak.github.io/SatoshiLabsHomework/
