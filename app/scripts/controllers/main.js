@@ -1,11 +1,17 @@
-(function() {
-  'use strict';
+/*global alert, confirm */
+'use strict';
 
-  var app = angular.module('SatoshiLabsHomework', ['ngClipboard']);
+/**
+ * @ngdoc function
+ * @name SatoshiLabsHomework.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the SatoshiLabsHomework
+ */
+angular.module('SatoshiLabsHomework')
+  .controller('MainCtrl', function ($scope) {
+    var savedPasswords = JSON.parse(localStorage.getItem('satoshiLabsHomework')) || [];
 
-  var savedPasswords = JSON.parse(localStorage.getItem('satoshiLabsHomework')) || [];
-
-  app.controller('PasswordsCtrl', function($scope) {
     $scope.editedItemIndex = 0;
 
     $scope.data = savedPasswords;
@@ -64,7 +70,7 @@
       }
 
       localStorage.setItem('satoshiLabsHomework', JSON.stringify(save));
-    };  
+    };
 
     // add/edit/delete password functions
 
@@ -122,7 +128,7 @@
           saveToLocalStorage();
         }
       } else {
-        alert(errors);        
+        alert(errors);
       }
     };
 
@@ -168,7 +174,7 @@
       }
     };
 
-    // password strength in <0;100> range
+    // returns password strength in <0;100> range
     $scope.computePasswordStrength = function(passwordLength) {
       var optimalLength = 16;
       var strength = 0;
@@ -191,5 +197,3 @@
     };
 
   });
-
-})();

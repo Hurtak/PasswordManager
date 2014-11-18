@@ -1,4 +1,4 @@
-body {
+.wrapper {
   background: #fff;
   max-width: 950px;
   margin: 0 auto;
@@ -40,7 +40,6 @@ body {
 
 .controls .btn-group button,
 .controls .btn-group a {
-  width: 33.3333333%;
   width: calc(100%/3);
 }
 
@@ -67,6 +66,15 @@ body {
   padding-left: 20px; 
 }
 
+/* Footer */
+.footer div {
+  float: left;
+}
+
+.footer .made-by {
+  float: right;
+}
+
 /* Lightbox */
 
 .modal-body {
@@ -83,7 +91,7 @@ body {
 button,
 input,
 a {
-  transition: .3s all;
+  transition: .3s background-color;
 }
 
 /* @media */
@@ -129,5 +137,9 @@ a {
 
   .modal-footer button:first-child {
     margin-top: 0;
+  }
+
+  .footer div {
+    float: none!important;
   }
 }
