@@ -1,7 +1,7 @@
 SatoshiLabsHomework
 ===================
 
-Password manager application built with <b>AngularJS</b>
+Password manager application built with <b>AngularJS</b> and <b>Bootstrap</b>
 
 ### Demo
 
