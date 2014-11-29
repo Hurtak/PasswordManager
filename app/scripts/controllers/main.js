@@ -1,4 +1,4 @@
-/*global alert, confirm */
+/*global alert, confirm*/
 'use strict';
 
 /**
@@ -9,12 +9,11 @@
  * Controller of the SatoshiLabsHomework
  */
 angular.module('SatoshiLabsHomework')
-  .controller('MainCtrl', function ($scope) {
-    var savedPasswords = JSON.parse(localStorage.getItem('satoshiLabsHomework')) || [];
+  .controller('MainCtrl', function ($scope, StorageService) {
+    var savedPasswords = StorageService.get();
+    $scope.data = savedPasswords;
 
     $scope.editedItemIndex = 0;
-
-    $scope.data = savedPasswords;
 
     $scope.formNew = {};
     $scope.formEdit = {};
@@ -25,7 +24,7 @@ angular.module('SatoshiLabsHomework')
     $scope.passwordInputType = 'password';
     $scope.passwordStrength = 0;
 
-    var verifyForm = function(form) {
+    var verifyForm = function (form) {
       var errors = [];
 
       if (!form.name) {
@@ -45,20 +44,19 @@ angular.module('SatoshiLabsHomework')
       }
     };
 
-    var addHttpPrefix = function(address) {
+    var addHttpPrefix = function (address) {
       if (address && !(/^https?:[/]{2}/).test(address)) {
         return 'http://' + address;
-      } else {
-        return address;
       }
+      return address;
     };
 
-    var turnOffPasswordDisplay = function() {
+    var turnOffPasswordDisplay = function () {
       $scope.passwordDisplayed = false;
       $scope.passwordInputType = 'password';
     };
 
-    var saveToLocalStorage = function() {
+    var saveToLocalStorage = function () {
       var save = [];
       for (var i = 0; i < savedPasswords.length; i++) {
         save.push({
@@ -69,19 +67,19 @@ angular.module('SatoshiLabsHomework')
         });
       }
 
-      localStorage.setItem('satoshiLabsHomework', JSON.stringify(save));
+      StorageService.put(save);
     };
 
     // add/edit/delete password functions
 
-    $scope.addPassword = function(form) {
+    $scope.addPassword = function (form) {
       var errors = verifyForm(form);
 
       if (!errors) {
         savedPasswords.push({
-          name: form.name,
-          website: addHttpPrefix(form.website),
-          username: form.username,
+          name: form.name.trim(),
+          website: addHttpPrefix(form.website.trim()),
+          username: form.username.trim(),
           password: form.password
         });
 
@@ -96,7 +94,7 @@ angular.module('SatoshiLabsHomework')
       }
     };
 
-    $scope.deletePassword = function(index) {
+    $scope.deletePassword = function (index) {
       var dialog = confirm('Do you really want to delete this password?');
 
       if (dialog) {
@@ -109,7 +107,7 @@ angular.module('SatoshiLabsHomework')
       }
     };
 
-    $scope.editPassword = function(index, form) {
+    $scope.editPassword = function (index, form) {
       var errors = verifyForm(form);
 
       $scope.dismissForm = '';
@@ -122,7 +120,7 @@ angular.module('SatoshiLabsHomework')
             website: addHttpPrefix(form.website),
             username: form.username,
             password: form.password
-          };        
+          };
           $scope.dismissForm = 'modal';
 
           saveToLocalStorage();
@@ -132,13 +130,13 @@ angular.module('SatoshiLabsHomework')
       }
     };
 
-    $scope.setEditedPasswordIndex = function(index) {
+    $scope.setEditedPasswordIndex = function (index) {
       $scope.editedItemIndex = index;
     };
 
     // Form functions
 
-    $scope.fillEditForm = function(form) {
+    $scope.fillEditForm = function (form) {
       turnOffPasswordDisplay();
       $scope.computePasswordStrength(form.password.length);
 
@@ -150,10 +148,9 @@ angular.module('SatoshiLabsHomework')
       };
     };
 
-    $scope.clearAddFrom = function() {
+    $scope.clearAddFrom = function () {
       turnOffPasswordDisplay();
       $scope.passwordStrength = 0;
-
       $scope.formAdd = {
         name: '',
         website: '',
@@ -164,33 +161,33 @@ angular.module('SatoshiLabsHomework')
 
     // Password functions
 
-    $scope.tooglePasswordDisplay = function() {
+    $scope.tooglePasswordDisplay = function () {
       if ($scope.passwordDisplayed) {
         $scope.passwordInputType = 'password';
-        $scope.passwordDisplayed = false;    
+        $scope.passwordDisplayed = false;
       } else {
         $scope.passwordInputType = 'text';
-        $scope.passwordDisplayed = true;    
+        $scope.passwordDisplayed = true;
       }
     };
 
     // returns password strength in <0;100> range
-    $scope.computePasswordStrength = function(passwordLength) {
+    $scope.computePasswordStrength = function (passwordLength) {
       var optimalLength = 16;
       var strength = 0;
       var type = '';
-      
+
       if (passwordLength > optimalLength) {
         strength = 100;
       } else {
         strength = Math.round(passwordLength / optimalLength * 100);
       }
-      
+
       if (strength < 50) {
         type = 'progress-bar-danger';
       } else if (strength < 80) {
         type = 'progress-bar-warning';
-      } 
+      }
 
       $scope.passwordStrength = strength;
       $scope.progressbarType = type;
