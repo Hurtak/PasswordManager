@@ -1,11 +1,11 @@
-SatoshiLabsHomework
+PasswordManager
 ===================
 
 Showcase of responsive password manager application built with <b>AngularJS</b> and <b>Bootstrap</b>
 
 ### Demo
 
-http://hurtak.github.io/SatoshiLabsHomework/
+http://hurtak.github.io/PasswordManager/
 
 ### Prerequisites
 
@@ -18,8 +18,8 @@ npm install -g bower
 ### Create App
 
 ```
-git clone https://github.com/Hurtak/SatoshiLabsHomework.git
-cd SatoshiLabsHomework
+git clone https://github.com/Hurtak/PasswordManager.git
+cd PasswordManager
 npm install
 bower install
 ```

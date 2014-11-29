@@ -3,7 +3,7 @@
 /**
 * Services that persists and retrieves passwords from localStorage.
 */
-angular.module('SatoshiLabsHomework')
+angular.module('PasswordManager')
   .factory('StorageService', function () {
     var storageName = 'passwords';
 

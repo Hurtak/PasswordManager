@@ -2,19 +2,15 @@
 
 /**
  * @ngdoc overview
- * @name SatoshiLabsHomework
+ * @name PasswordManager
  * @description
- * # SatoshiLabsHomework
+ * # PasswordManager
  *
  * Main module of the application.
  */
 angular
-  .module('SatoshiLabsHomework', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
+  .module('PasswordManager', [
     'ngRoute',
-    'ngSanitize',
     'ngTouch',
     'ngClipboard'
   ])

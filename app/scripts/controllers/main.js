@@ -3,12 +3,12 @@
 
 /**
  * @ngdoc function
- * @name SatoshiLabsHomework.controller:MainCtrl
+ * @name PasswordManager.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the SatoshiLabsHomework
+ * Controller of the PasswordManager
  */
-angular.module('SatoshiLabsHomework')
+angular.module('PasswordManager')
   .controller('MainCtrl', function ($scope, StorageService) {
     var savedPasswords = StorageService.get();
     $scope.data = savedPasswords;
