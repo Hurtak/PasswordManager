@@ -1,7 +1,7 @@
 SatoshiLabsHomework
 ===================
 
-Password manager application built with <b>AngularJS</b> and <b>Bootstrap</b>
+Showcase of responsive password manager application built with <b>AngularJS</b> and <b>Bootstrap</b>
 
 ### Demo
 
@@ -37,3 +37,17 @@ run app from dist folder
 ```
 grunt serve
 ```
+
+### Screenshots
+
+#####Basic view
+<img src="http://i.imgur.com/MtHQcLf.png">
+
+#####Edit password
+<img src="http://i.imgur.com/qLYEZ20.png">
+
+#####Tablet devices (max-width: 768px and min-width: 480px)
+<img src="http://i.imgur.com/sNoJe35.png">
+
+#####Mobile devices (max-width: 480px)
+<img src="http://i.imgur.com/Y2ee4mj.png">
